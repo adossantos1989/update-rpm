@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% set vars = {'page': 'home'} %}
+    {% include "navbar.html" with vars %}
+
+    <div class="container mt-5">
+        <h1>Login avec sucssès</h1>
+        <button type="button" class="btn btn-primary btn-lg btn-block">Suprimmer session</button>
+    </div>
+{% endblock %}
+
+{% block script %}
+    {% parent %}
+    <script>
+        $(function() {
+            $('button').click(function(e) {
+                e.preventDefault()
+                $.ajax({
+                    url: "/backHome",
+                    method: "delete"
+                }).done(function (data) {
+                    console.log(data)
+                    location.href = '/'
+                })
+            })
+        })
+    </script>
+{% endblock %}

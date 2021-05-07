@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% set vars = {'page': 'photo'} %}
+    {% include "navbar.html" with vars %}
+
+    <div class="container mt-6">
+    <div class="row">
+        <div class="col-md-7">
+          <h2 class="photo-title">Printemps</h2>
+          <p class="lead">L'hiver est fini, les températures montent.</p>
+        </div>
+        <div class="col-md-5">
+            <a href="#" class="small-img"><img class="img-thumbnail" alt="Generic placeholder image" src="{{ urlp }}" id="photo01"></a>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="photo-title">Ete </h2>
+          <p class="lead">La pluie donne place au solei, aux grillades et à la bière</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <a href="#" class="small-img"><img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="{{ urle }}" id="photo02"></a>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="photo-title">La suisse</h2>
+          <p class="lead">Le chocolat, la fondue et la raclette</p>
+        </div>
+        <div class="col-md-5">
+            <a href="#" class="small-img"><img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="{{ urls }}" id="photo03"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="mymodal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Photo</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img class="featurette-image img-fluid mx-auto" src="">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    {% parent %}
+    <script>
+        $(function() {
+            $('.small-img').on("click", function(e) {
+                e.preventDefault()
+                const urlImage = $(this).find('img').attr('src')
+                $('#mymodal').modal()
+                    .find('.modal-body > img').attr('src', urlImage)
+
+            })
+        })
+    </script>
+{% endblock %}
