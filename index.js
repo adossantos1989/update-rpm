@@ -14,6 +14,11 @@ router.get('/', home)
 app.use(bodyparser())
 app.use(render)
 app.use(router.routes())
+app.use(serve(__dirname + "/assets"))
+app.use(serve(__dirname + "/scripts"))
+app.use(serve(__dirname + "/node_modules/bootstrap/dist"))
+app.use(serve(__dirname + "/node_modules/bootstrap-icons"))
+app.use(serve(__dirname + "/node_modules/jquery/dist"))
 
 // fonction qui genere la pag home
 async function home(ctx) {
