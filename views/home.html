@@ -1,13 +1,47 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container mt-5">
-        <h1>BIENVENUE sur mon sie node avec KOA - DEV -</h1>
-    </div>
+    <main>
+        {% set vars = {'page': 'home'} %}
+        {% include "navbar.html" with vars %}
+        <!-- Page  -->
+        <div class="p-3 bg-white" style="width: 880px;">
+            <!-- Title -->
+            <h2>Application de gestion centralisé des bornes embarqués</h1>
+            <div class="d-flex justify-content-center">
+                <a><i class="bi bi-display"></i> BOEMB / LEB / BOTER</a>
+            </div>
+            <!-- Title -->
+
+            <hr>
+            <!-- Selection  -->
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+                  <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-bolder">Groupe</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Groupe  -->
+                        <div class="custom-control custom-checkbox" id="card_groupe" style="width: 120px;">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!-- Selection  -->
+        </div>
+         <!-- Page  -->
+        <div class="b-example-divider"></div>
+    </main>
+        {% include "features.html" %}
+
 {% endblock %}
 
 {% block script %}
     {% parent %}
+    <!-- OPTIONAL: You probably want this. Put your custom code here -->
+    <script src="api.js"></script>
     <script>
 
     </script>
