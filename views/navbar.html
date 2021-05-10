@@ -1,12 +1,42 @@
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link {% if page == 'home' %}active{% endif %}" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link {% if page == 'photo' %}active{% endif %}" href="/photo">photo</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+<!-- Nbvar vertival-->
+<div class="d-flex flex-column p-3 text-white bg-dark" style="width: 280px; height: 600px;">
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+    <i class="bi bi-cpu"> Systèmes Embarqués </i>
+  </a>
+  <hr>
+
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a href="#" class="nav-link active" aria-current="page">
+        <i class="bi bi-upload"></i>
+         update-rpm
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link text-white">
+        <i class="bi bi-speedometer2"></i>
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link text-white">
+        <i class="bi bi-table"></i>
+         Orders
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link text-white">
+        <i class="bi bi-grid"></i>
+         Products
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link text-white">
+        <i class="bi bi-person-circle"></i>
+         Customers
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="b-example-divider"></div>
